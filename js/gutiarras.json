@@ -1,0 +1,42 @@
+[
+    {
+        "id": "jaguar",
+        "titulo": "Jaguar",
+        "imagen": "./img/jaguar.jpg",
+        "categoria": {
+            "nombre": "Jaguar",
+            "id": "Guitar1"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "jazzmaster",
+        "titulo": "Jazzmaster",
+        "imagen": "./img/jazzmaster.jpg",
+        "categoria": {
+            "nombre": "Jazzmaster",
+            "id": "Guitar2"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "telecaster",
+        "titulo": "Telecaster",
+        "imagen": "./img/telecaster.jpg",
+        "categoria": {
+            "nombre": "Telecaster",
+            "id": "Guitar3"
+        },
+        "precio": 1000
+    },
+    {
+        "id": "stratocaster",
+        "titulo": "Stratocaster",
+        "imagen": "./img/stratocaster.jpg",
+        "categoria": {
+            "nombre": "Stratocaster",
+            "id": "Guitar4"
+        },
+        "precio": 1000
+    }
+]
