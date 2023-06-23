@@ -5,7 +5,7 @@
         "imagen": "./img/jaguar.jpg",
         "categoria": {
             "nombre": "Jaguar",
-            "id": "Guitar1"
+            "id": "guitar01"
         },
         "precio": 1000
     },
@@ -15,7 +15,7 @@
         "imagen": "./img/jazzmaster.jpg",
         "categoria": {
             "nombre": "Jazzmaster",
-            "id": "Guitar2"
+            "id": "guitar02"
         },
         "precio": 1000
     },
@@ -25,7 +25,7 @@
         "imagen": "./img/telecaster.jpg",
         "categoria": {
             "nombre": "Telecaster",
-            "id": "Guitar3"
+            "id": "guitar03"
         },
         "precio": 1000
     },
@@ -35,7 +35,7 @@
         "imagen": "./img/stratocaster.jpg",
         "categoria": {
             "nombre": "Stratocaster",
-            "id": "Guitar4"
+            "id": "guitar04"
         },
         "precio": 1000
     }
