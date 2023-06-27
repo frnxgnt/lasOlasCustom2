@@ -9,11 +9,9 @@ const contenedorMarcas = document.querySelector("#marcas");
 function cargarMarcas(guitarras){
   const marcasUnicas = [];
 
-  // Recorrer la lista de guitarras
   for (let i = 0; i < guitarras.length; i++) {
       const marca = guitarras[i].marca;
 
-      // Verificar si la marca ya existe en el array de marcas únicas
       if (!marcasUnicas.includes(marca)) {
           marcasUnicas.push(marca);
       }
