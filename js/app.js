@@ -1,19 +1,54 @@
 let guitarras = [];
 let carrito = [];
 
+let contenedorGuitarras = document.querySelector("#contenedorGuitarras");
+const carritoGuitarras = document.querySelector("#carritoGuitarras");
+const contenedorMarcas = document.querySelector("#marcas");
+
+
+function cargarMarcas(guitarras){
+  const marcasUnicas = [];
+
+  // Recorrer la lista de guitarras
+  for (let i = 0; i < guitarras.length; i++) {
+      const marca = guitarras[i].marca;
+
+      // Verificar si la marca ya existe en el array de marcas únicas
+      if (!marcasUnicas.includes(marca)) {
+          marcasUnicas.push(marca);
+      }
+  } console.log(marcasUnicas);
+
+  marcasUnicas.forEach(marca => {
+    contenedorMarcas.innerHTML += `
+    <option class="opcionMarca" value="${marca}">${marca}</option>`
+  })
+    
+  contenedorMarcas.addEventListener("change", (e) => {
+    const opcionSeleccionada = e.target.value;
+    console.log('Opción seleccionada:', opcionSeleccionada);
+
+    const marcasFiltradas = guitarras.filter(guitarra =>{
+      return guitarra.marca === opcionSeleccionada;
+    })
+    contenedorGuitarras.innerHTML = "";
+    cargarGuitarras(marcasFiltradas)
+  });
+
+}
+
 fetch("./js/guitarras.json")
   .then(response => response.json())
   .then(data => {
     guitarras = data;
     cargarGuitarras(guitarras);
-  })
+    cargarMarcas(guitarras);
+  });
 
-const contenedorGuitarras = document.querySelector("#contenedorGuitarras");
-const carritoGuitarras = document.querySelector("#carritoGuitarras");
-
-
+  
 
 function cargarGuitarras(guitarras) {
+ console.log(contenedorGuitarras)
   guitarras.forEach(guitarra => {
     contenedorGuitarras.innerHTML += `
     <div class="guitar">
@@ -26,7 +61,6 @@ function cargarGuitarras(guitarras) {
     </div>
     `;
   });
-
   const botonesAgregar = document.querySelectorAll(".boton-agregar");
   botonesAgregar.forEach(boton => {
     boton.addEventListener("click", () => {
@@ -37,6 +71,8 @@ function cargarGuitarras(guitarras) {
     });
   });
 }
+
+
 
 
 function agregarAlCarrito(id) {
@@ -58,3 +94,5 @@ function mostrarCarrito() {
     `;
   });
 }
+
+
