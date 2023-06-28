@@ -5,36 +5,6 @@ let contenedorGuitarras = document.querySelector("#contenedorGuitarras");
 const carritoGuitarras = document.querySelector("#carritoGuitarras");
 const contenedorMarcas = document.querySelector("#marcas");
 
-
-function cargarMarcas(guitarras){
-  const marcasUnicas = [];
-
-  for (let i = 0; i < guitarras.length; i++) {
-      const marca = guitarras[i].marca;
-
-      if (!marcasUnicas.includes(marca)) {
-          marcasUnicas.push(marca);
-      }
-  } console.log(marcasUnicas);
-
-  marcasUnicas.forEach(marca => {
-    contenedorMarcas.innerHTML += `
-    <option class="opcionMarca" value="${marca}">${marca}</option>`
-  })
-    
-  contenedorMarcas.addEventListener("change", (e) => {
-    const opcionSeleccionada = e.target.value;
-    console.log('Opción seleccionada:', opcionSeleccionada);
-
-    const marcasFiltradas = guitarras.filter(guitarra =>{
-      return guitarra.marca === opcionSeleccionada;
-    })
-    contenedorGuitarras.innerHTML = "";
-    cargarGuitarras(marcasFiltradas)
-  });
-
-}
-
 fetch("./js/guitarras.json")
   .then(response => response.json())
   .then(data => {
@@ -43,7 +13,40 @@ fetch("./js/guitarras.json")
     cargarMarcas(guitarras);
   });
 
+
+function cargarMarcas(guitarras){
   
+  const marcasUnicas = [];
+
+  for (let i = 0; i < guitarras.length; i++) {
+      const marca = guitarras[i].marca;
+
+      if (!marcasUnicas.includes(marca)) {
+          marcasUnicas.push(marca);
+      }
+  }
+
+  marcasUnicas.forEach(marca => {
+    contenedorMarcas.innerHTML += `
+    <option class="opcionMarca" value="${marca}">${marca}</option>`
+  })
+    
+
+  contenedorMarcas.addEventListener("change", (e) => {
+    
+    const opcionSeleccionada = e.target.value;
+
+    const marcasFiltradas = guitarras.filter(guitarra =>{
+      return guitarra.marca === opcionSeleccionada;
+    })
+
+    contenedorGuitarras.innerHTML = "";
+    cargarGuitarras(marcasFiltradas)
+
+  });
+
+}
+
 
 function cargarGuitarras(guitarras) {
  console.log(contenedorGuitarras)
@@ -61,22 +64,27 @@ function cargarGuitarras(guitarras) {
   });
   const botonesAgregar = document.querySelectorAll(".boton-agregar");
   botonesAgregar.forEach(boton => {
+    
     boton.addEventListener("click", () => {
-      console.log(boton.id)
+      
       agregarAlCarrito(boton.id);
       mostrarCarrito();
-      alert("Se agrego su guitarra al carrito") //REEMPLAZAR POR SWEETALERT
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Agregó su guitarra',
+        showConfirmButton: false,
+        timer: 1500
+      })
     });
   });
 }
-
-
-
 
 function agregarAlCarrito(id) {
   const guitarraElegida = guitarras.find(guitarra => guitarra.id === id);
   carrito.push(guitarraElegida);
 }
+
 
 function mostrarCarrito() {
   carritoGuitarras.innerHTML = "";
@@ -88,9 +96,8 @@ function mostrarCarrito() {
         <h3>${guitarra.titulo}</h3>
         <p>${guitarra.precio}</p>
       </div>
-    </div>
-    `;
-  });
+    </div>`;
+  });
 }
 
 
