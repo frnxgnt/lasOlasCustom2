@@ -13,7 +13,7 @@ fetch("./js/guitarras.json")
     cargarMarcas(guitarras);
   });
 
-
+// filtro las guitarras por marcas, y tengo la opcion de mostrar todas las marcas
 function cargarMarcas(guitarras){
   
   const marcasUnicas = [];
@@ -26,6 +26,9 @@ function cargarMarcas(guitarras){
       }
   }
 
+  contenedorMarcas.innerHTML += `
+  <option class="opcionTodas" value="Todas las marcas">Todas las marcas</option>`
+
   marcasUnicas.forEach(marca => {
     contenedorMarcas.innerHTML += `
     <option class="opcionMarca" value="${marca}">${marca}</option>`
@@ -36,17 +39,23 @@ function cargarMarcas(guitarras){
     
     const opcionSeleccionada = e.target.value;
 
-    const marcasFiltradas = guitarras.filter(guitarra =>{
-      return guitarra.marca === opcionSeleccionada;
-    })
+    if (opcionSeleccionada === "Todas las marcas"){
+      mostrarTodasLasMarcas();
+    } else {
 
-    contenedorGuitarras.innerHTML = "";
-    cargarGuitarras(marcasFiltradas)
+      const marcasFiltradas = guitarras.filter(guitarra =>{
+        return guitarra.marca === opcionSeleccionada;
+      })
 
-  });
+      contenedorGuitarras.innerHTML = "";
+      cargarGuitarras(marcasFiltradas)
+    }
+});
+   
 
 }
 
+// funcion para contruir las guitarras del array con sus respectivos botones para agregar al carrito
 
 function cargarGuitarras(guitarras) {
  console.log(contenedorGuitarras)
@@ -80,12 +89,13 @@ function cargarGuitarras(guitarras) {
   });
 }
 
+// funcion para agregar cada producto al array vacío del carrito (funciona en conjunto con botenesAgregar)
 function agregarAlCarrito(id) {
   const guitarraElegida = guitarras.find(guitarra => guitarra.id === id);
   carrito.push(guitarraElegida);
 }
 
-
+// funcion para crear las guitarras seleccionadas en el div del carrito
 function mostrarCarrito() {
   carritoGuitarras.innerHTML = "";
   carrito.forEach(guitarra => {
@@ -97,7 +107,11 @@ function mostrarCarrito() {
         <p>${guitarra.precio}</p>
       </div>
     </div>`;
-  });
+});
 }
 
-
+// esta funcion la hice solamente para el filtro que muestra todas las marcas (un filtro que no filtra)
+function mostrarTodasLasMarcas() {
+  contenedorGuitarras.innerHTML = "";
+  cargarGuitarras(guitarras);
+}

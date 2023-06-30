@@ -1,3 +1,4 @@
+/* Estilos globales */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -11,6 +12,7 @@ h1 {
   margin-top: 50px;
 }
 
+/* Estilos del contenedor principal */
 .conteiner {
   max-width: 800px;
   margin: 0 auto;
@@ -22,13 +24,56 @@ h1 {
   grid-template-columns: 1fr;
   grid-template-areas:
     "header"
-    "main"
+    "contenedorGuitarras"
+    "contenedorCarrito"
     "footer";
   gap: 20px;
 }
 
-label {
-  font-weight: bold;
+/* Estilos de la barra de navegación */
+nav {
+  grid-area: header;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav a {
+  display: block;
+  padding: 10px 15px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: #555;
+}
+
+/* Estilos para resaltar el enlace activo */
+nav .active a {
+  background-color: #555;
+}
+
+nav a:focus {
+  outline: none;
+}
+
+nav a:active {
+  background-color: #777;
 }
 
 /* Estilos del select */
@@ -41,17 +86,11 @@ select {
   border-radius: 5px;
 }
 
-/* Estilos del header */
-header {
-  grid-area: header;
-  text-align: center;
-}
-
 /* Estilos del main */
 main {
   grid-area: main;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 3fr 1fr;
   gap: 20px;
 }
 
@@ -60,33 +99,39 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  grid-area: contenedorGuitarras;
 }
 
-/* Estilos de las guitarras */
-.guitarra {
-  width: 100%;
-  margin-bottom: 20px;
+
+.guitar {
+  width: 30%;
+  margin: 5px;
   padding: 10px;
-  background-color: #f9f9f9;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos del carrito */
+
+
 #carritoGuitarras {
-  grid-area: carrito;
+  grid-area: contenedorCarrito;
   padding: 10px;
   background-color: #f9f9f9;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* Evita que las imágenes se superpongan */
+  overflow: hidden;
+}
+
+.carritoGuitarra {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
 h2 {
-  margin-top: 0;
+  margin: 0;
 }
 
-/* Estilos de los elementos del carrito */
 .carritoGuitarra {
   display: flex;
   align-items: center;
@@ -95,20 +140,20 @@ h2 {
 
 .carritoGuitarra img {
   max-width: 60px;
-  margin-right: 10px;
+  margin: 10px;
 }
 
 .carritoGuitarra p {
-  margin: 0;
+  margin: 10;
 }
 
-/* Estilos del footer */
+
 footer {
   grid-area: footer;
   text-align: center;
 }
 
-/* Estilos del enlace */
+
 a {
   color: #333;
   text-decoration: none;
@@ -116,4 +161,26 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.boton-agregar {
+  padding: 8px 16px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.boton-agregar:hover {
+  background-color: #555;
+}
+
+.boton-agregar:focus {
+  outline: none;
+}
+
+.boton-agregar:active {
+  background-color: #777;
 }

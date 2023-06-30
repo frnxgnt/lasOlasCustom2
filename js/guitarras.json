@@ -2,29 +2,57 @@
     {
         "id": "jaguar",
         "titulo": "Jaguar",
-        "imagen": "./img/jaguar.jpg",
-        "marca": "Gibson",
+        "imagen": "./img/fender_jaguar.jpg",
+        "marca": "Fender",
         "precio": 1000
     },
     {
         "id": "jazzmaster",
         "titulo": "Jazzmaster",
-        "imagen": "./img/jazzmaster.jpg",
-        "marca": "Gibson",
+        "imagen": "./img/fender_jazzmaster.jpg",
+        "marca": "Fender",
         "precio": 1000
     },
     {
         "id": "telecaster",
         "titulo": "Telecaster",
-        "imagen": "./img/telecaster.jpg",
+        "imagen": "./img/fender_telecaster.jpg",
         "marca": "Fender",
         "precio": 1000
     },
     {
         "id": "stratocaster",
         "titulo": "Stratocaster",
-        "imagen": "./img/stratocaster.jpg",
+        "imagen": "./img/fender_stratocaster.jpg",
         "marca": "Fender",
+        "precio": 1000
+    },
+    {
+        "id": "gibson_es335",
+        "titulo": "ES-335",
+        "imagen": "./img/gibson_e335.jpg",
+        "marca": "Gibson",
+        "precio": 1000
+    },
+    {
+        "id": "lespaul_standard",
+        "titulo": "Les Paul Standard",
+        "imagen": "./img/gibson_lespaulStandard.jpg",
+        "marca": "Gibson",
+        "precio": 1000
+    },
+    {
+        "id": "sg_special",
+        "titulo": "SG Special",
+        "imagen": "./img/gibson_sgSpecial.jpg",
+        "marca": "Gibson",
+        "precio": 1000
+    },
+    {
+        "id": "sg_standard",
+        "titulo": "SG Standard",
+        "imagen": "./img/gibson_sgStandard.jpg",
+        "marca": "Gibson",
         "precio": 1000
     }
 ]
