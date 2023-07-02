@@ -1,9 +1,4 @@
 /* Estilos globales */
-font-face{
-  font-family: pincoyablack;
-  src: url(./pincoyablack.otf);
-}
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -14,7 +9,6 @@ body {
 
 h1 {
   text-align: center;
-  margin-top: 50px;
   font-family: pincoyablack;
   font-size: 150px;  
 }
@@ -23,6 +17,15 @@ h1 {
   margin: 50px;
   font-family: pincoyablack;
   font-size: 70px;
+}
+
+.tituloPag{
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Estilos del contenedor principal */
