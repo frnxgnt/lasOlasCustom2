@@ -100,9 +100,9 @@ function mostrarCarrito() {
   carritoGuitarras.innerHTML = "";
   carrito.forEach(guitarra => {
     carritoGuitarras.innerHTML += `
-    <div class="guitarra">
+    <div class="guitar">
       <img src="${guitarra.imagen}" alt="${guitarra.titulo}">
-      <div class="guitarra-info">
+      <div class="guitar-info">
         <h3>${guitarra.titulo}</h3>
         <p>${guitarra.precio}</p>
       </div>
