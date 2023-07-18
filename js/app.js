@@ -77,7 +77,6 @@ function cargarGuitarras(guitarras) {
     boton.addEventListener("click", () => {
       
       agregarAlCarrito(boton.id);
-      mostrarCarrito();
       Swal.fire({
         position: 'center',
         icon: 'success',
@@ -93,22 +92,11 @@ function cargarGuitarras(guitarras) {
 function agregarAlCarrito(id) {
   const guitarraElegida = guitarras.find(guitarra => guitarra.id === id);
   carrito.push(guitarraElegida);
+  localStorage.setItem("productos-en-carrito", JSON.stringify(carrito));
+
 }
 
-// funcion para crear las guitarras seleccionadas en el div del carrito
-function mostrarCarrito() {
-  carritoGuitarras.innerHTML = "";
-  carrito.forEach(guitarra => {
-    carritoGuitarras.innerHTML += `
-    <div class="guitar">
-      <img src="${guitarra.imagen}" alt="${guitarra.titulo}">
-      <div class="guitar-info">
-        <h3>${guitarra.titulo}</h3>
-        <p>${guitarra.precio}</p>
-      </div>
-    </div>`;
-});
-}
+
 
 // esta funcion la hice solamente para el filtro que muestra todas las marcas (un filtro que no filtra)
 function mostrarTodasLasMarcas() {

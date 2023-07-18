@@ -210,3 +210,25 @@ a:hover {
 .boton-agregar:active {
   background-color: #777;
 }
+
+#boton-quitar {
+  padding: 8px 16px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#boton-quitar:hover {
+  background-color: #555;
+}
+
+#boton-quitar:focus {
+  outline: none;
+}
+
+#boton-quitar:active {
+  background-color: #777;
+}
