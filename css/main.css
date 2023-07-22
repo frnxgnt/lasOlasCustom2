@@ -213,6 +213,7 @@ a:hover {
 
 #boton-quitar {
   padding: 8px 16px;
+  margin: 10px;
   background-color: #333;
   color: #fff;
   border: none;
@@ -231,4 +232,58 @@ a:hover {
 
 #boton-quitar:active {
   background-color: #777;
+}
+
+#generarFormulario {
+  padding: 8px 16px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#generarFormulario:hover {
+  background-color: #555;
+}
+
+#generarFormulario:focus {
+  outline: none;
+}
+
+#generarFormulario:active {
+  background-color: #777;
+}
+
+#boton-finalizarCompra {
+  padding: 8px 16px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#boton-finalizarCompra:hover {
+  background-color: #555;
+}
+
+#boton-finalizarCompra:focus {
+  outline: none;
+}
+
+#boton-finalizarCompra:active {
+  background-color: #777;
+}
+
+
+form{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  margin:20px;
 }
